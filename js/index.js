@@ -53,17 +53,17 @@
 
     });
 
-    i.addEventListener('mouseenter', function(){
+    // i.addEventListener('mouseenter', function(){
 
-        if(window.outerWidth > 1024){
+    //     if(window.outerWidth > 1024){
 
-            this.classList.add('state-active');
+    //         this.classList.add('state-active');
 
-            document.getElementById('masthead').classList.add('state-active');
+    //         document.getElementById('masthead').classList.add('state-active');
 
-        }
+    //     }
 
-    });
+    // });
 
     i.addEventListener('mouseleave', function(){
 

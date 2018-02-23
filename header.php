@@ -81,21 +81,7 @@
 					<a href="<?php echo site_url('/'); ?>">Pivot</a>
 					<li id="inner-menu-toggle">
 						<span>Services</span>
-						<ul>
-							<?php $terms = get_terms( 'category' );?>
-							<?php foreach($terms as $term): ?>
-			          <li class="inner-menu-toggle">
-			          	<span><?php echo $term->name; ?></span>
-			          	<ul>
-			          	<?php foreach($services as $service): ?>
-			          		<?php if(has_term($term->name, 'category', $service)): ?>
-			          			<li><a href="<?php echo get_permalink($service); ?>"><?php echo $service->post_title ?></a></li>
-			          		<?php endif ?>
-			          	<?php endforeach; ?>
-			          	</ul>
-			          </li>
-			         <?php endforeach ?>
-						</ul>
+						
 					</li>
 					<li><a href="<?php echo site_url('/portfolio'); ?>">Portfolio</a></li>
 					<a id="ampersand">
@@ -134,3 +120,4 @@
 				<a href="tel:+16472836532" class="phone">+1 (647) 283 . 6432</a>
 			</footer>
 		</div>
+ 
