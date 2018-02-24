@@ -286,7 +286,6 @@ $('.contact-nav > button').on('click', function(e){
   }
 
 });
-
  
 document.querySelector( '.wpcf7' ).addEventListener( 'wpcf7invalid', function( event ) {
     $('.contact-form-container').css('height', $('.contact-form-container > div').eq(2).outerHeight());
