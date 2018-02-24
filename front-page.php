@@ -27,7 +27,24 @@ get_header(); ?>
       </section>
       <?php endwhile ?>
 
-
+      <section class="front-page__how-we-do-it">
+        <div class="front-page__how-we-do-it-header">how we do it</div>
+        <?php
+        if( have_rows('front_page_how_we_do_it') ):
+          while ( have_rows('front_page_how_we_do_it') ) : the_row(); 
+        ?>
+          <div>
+          <?php the_sub_field('how_we_do_it_title'); ?>
+          </div>
+          <div>
+          <?php the_sub_field('how_we_do_it_content'); ?>
+          </div>
+          <a href="">view projects</a>
+        <?php
+          endwhile;
+        endif;
+        ?>
+      </section>
      
 
       <section>
@@ -35,18 +52,18 @@ get_header(); ?>
           <a href="<?php echo site_url('/portfolio'); ?>" class="align-center"><button>Featured Case Studies</button></a>
           <div id="featured-case-studies">
             <?php 
-            $elements = get_posts(
+            $projects = get_posts(
               array(
               'post_type' => 'clients',
               )
             );
-            foreach($elements as $element): ?>
+            foreach($projects as $project): ?>
             <article class="post-portfolio">
-              <a href="<?php echo get_permalink($element) ?>"><img src="<?php echo get_the_post_thumbnail_url($element, 'large'); ?>"/></a>
+              <a href="<?php echo get_permalink($project) ?>"><img src="<?php echo get_the_post_thumbnail_url($project, 'large'); ?>"/></a>
               <div class="post-meta">
-                <h2><?php echo $element->post_excerpt ?></h2>
+                <h2><?php echo $project->post_excerpt ?></h2>
                 <p>
-                  <?php $terms = get_the_terms($element , 'category'); ?>
+                  <?php $terms = get_the_terms($project , 'category'); ?>
                   <?php foreach($terms as $term): ?>
                   <span><?php echo $term->name ?></span>
                   <?php endforeach?>
