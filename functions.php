@@ -325,6 +325,14 @@ function pivotpilotcustom_widgets_init() {
 }
 add_action( 'widgets_init', 'pivotpilotcustom_widgets_init' );
 
+// ACF Google Maps API Key
+// function my_acf_init() {
+	
+// 	acf_update_setting('google_api_key', '');
+// }
+
+// add_action('acf/init', 'my_acf_init');
+
 /**
  * Enqueue scripts and styles.
  */
