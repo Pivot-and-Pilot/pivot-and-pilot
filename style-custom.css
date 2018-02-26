@@ -2427,7 +2427,7 @@ ul {
 }
 
 .archive-portfolio{
-  background: #EEEEFE;
+  /* background: #EEEEFE; */
   position: relative;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -2443,7 +2443,8 @@ ul {
   margin-top: 5px;}
 
 .archive-portfolio .dropdown{
-  display: none;}
+  /* display: none; */
+}
 @media(min-width:1025px){
   .archive-portfolio .dropdown{
     margin-bottom: 15px;
@@ -3109,8 +3110,8 @@ ul {
   border-bottom: 1px solid #443CFF;
   color: #443CFF;
   display: block;
-  font-family: arno-pro;
-  font-style: italic;
+  font-family: Walsheim;
+  /* font-style: italic; */
   font-size: 1.25em;
   padding: 5px 0px;
   width: 100%;}
@@ -4821,7 +4822,7 @@ footer .site-footer {
     padding: 15px 60px;}}
 
 .tabs li:first-of-type{
-  background: #EEEEFE;
+  /* background: #EEEEFE; */
   max-width: none;
   padding-left: 15px;
   padding-right: 30px;
@@ -4845,7 +4846,7 @@ footer .site-footer {
 }
 
 .tabs li:last-of-type{
-  background:#cecdfd;
+  /* background:#cecdfd; */
   padding-left: 30px;}
 @media(min-width:1320px){
   .tabs li:last-of-type{
