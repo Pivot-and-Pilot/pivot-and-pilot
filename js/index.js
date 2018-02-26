@@ -53,17 +53,17 @@
 
     });
 
-    i.addEventListener('mouseenter', function(){
+    // i.addEventListener('mouseenter', function(){
 
-        if(window.outerWidth > 1024){
+    //     if(window.outerWidth > 1024){
 
-            this.classList.add('state-active');
+    //         this.classList.add('state-active');
 
-            document.getElementById('masthead').classList.add('state-active');
+    //         document.getElementById('masthead').classList.add('state-active');
 
-        }
+    //     }
 
-    });
+    // });
 
     i.addEventListener('mouseleave', function(){
 
@@ -286,7 +286,6 @@ $('.contact-nav > button').on('click', function(e){
   }
 
 });
-
  
 document.querySelector( '.wpcf7' ).addEventListener( 'wpcf7invalid', function( event ) {
     $('.contact-form-container').css('height', $('.contact-form-container > div').eq(2).outerHeight());
