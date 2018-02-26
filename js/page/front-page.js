@@ -246,3 +246,14 @@ function circleContract(){
 }
 
 })();
+
+
+jQuery(document).ready(function($){
+
+  (function howWeDoItToggle () {
+    $('.how-we-do-it-title').on('click', (e) => {
+			$($(e.target).siblings()).toggle();
+    })
+  })();
+
+})

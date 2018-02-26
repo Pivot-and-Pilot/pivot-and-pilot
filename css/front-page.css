@@ -1,0 +1,49 @@
+.front-page__how-we-do-it .front-page__how-we-do-it-header {
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.8em;
+}
+.front-page__how-we-do-it .how-we-do-it-title {
+  height: 60px;
+  line-height: 60px;
+  text-transform: capitalize;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle {
+  background-color: rgb(238, 238, 253);
+  padding: 6vw;
+  margin: 0 -6vw;
+  position: relative;
+  transition: all 1s ease-in-out;
+  display: none;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-title {
+  margin-top: 6vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 0.8em;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-title:nth-child(1) {
+  margin-top: 0;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-detail {
+  margin-bottom: 6vw;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-view-projects {
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-size: 1.3em;
+}
+
+/* featured projects */
+.featured-projects-header {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+

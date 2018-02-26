@@ -386,7 +386,7 @@ p{
 
 section {
   background: white;
-  padding: 30px 15px;
+  padding: 6vw;
   position: relative;
 }
 @media(min-width:768px){
@@ -1353,7 +1353,7 @@ ul {
 
 #featured-case-studies article{
   display: inline-block;
-  margin: 0 3.75px;
+  margin: 0;
   vertical-align: top;}
 @media(min-width:1025px){
   #featured-case-studies article{
@@ -4417,6 +4417,7 @@ ul {
 .post-portfolio img{
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .post-portfolio > a > img {
@@ -4427,7 +4428,7 @@ ul {
 
 .post-portfolio h2{
   font-weight: 600;
-  margin-top: 15px;
+  margin-top: 10px;
   max-width: 12.5em;}
 @media(min-width:768px){
   .post-portfolio h2{
@@ -4450,8 +4451,10 @@ ul {
 
 .post-portfolio p{
   font-family: arno-pro;
-  font-size: 1.25em;
-  margin-top: 7.5px;}
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
 
 .post-portfolio span{}
 @media(min-width:1025px){

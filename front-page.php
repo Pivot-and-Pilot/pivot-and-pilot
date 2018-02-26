@@ -34,12 +34,29 @@ get_header(); ?>
           while ( have_rows('front_page_how_we_do_it') ) : the_row(); 
         ?>
           <div>
-          <?php the_sub_field('how_we_do_it_title'); ?>
+            <div class="how-we-do-it-title">
+            <?php the_sub_field('how_we_do_it_title'); ?>
+            </div>
+            <div class="how-we-do-it-content-toggle">
+            <?php
+            if( have_rows('how_we_do_it_content') ):
+              while ( have_rows('how_we_do_it_content') ) : the_row(); 
+            ?>  
+              <div class="how-we-do-it-content-title">
+              <?php the_sub_field('how_we_do_it_content_title'); ?>
+              </div>
+              <div class="how-we-do-it-content-detail">
+              <?php the_sub_field('how_we_do_it_content_detail'); ?>
+              </div>
+            <?php
+              endwhile;
+            endif;
+            ?>
+            <a href="" class="how-we-do-it-content-view-projects">view projects</a>
           </div>
-          <div>
-          <?php the_sub_field('how_we_do_it_content'); ?>
-          </div>
-          <a href="">view projects</a>
+          
+        </div>
+          
         <?php
           endwhile;
         endif;
@@ -49,7 +66,7 @@ get_header(); ?>
 
       <section>
         <div class="max-width-wrapper">
-          <a href="<?php echo site_url('/portfolio'); ?>" class="align-center"><button>Featured Case Studies</button></a>
+          <div class="featured-projects-header">Featured projects</div>  
           <div id="featured-case-studies">
             <?php 
             $projects = get_posts(
@@ -61,7 +78,7 @@ get_header(); ?>
             <article class="post-portfolio">
               <a href="<?php echo get_permalink($project) ?>"><img src="<?php echo get_the_post_thumbnail_url($project, 'large'); ?>"/></a>
               <div class="post-meta">
-                <h2><?php echo $project->post_excerpt ?></h2>
+                <h2><?php echo $project->post_title ?></h2>
                 <p>
                   <?php $terms = get_the_terms($project , 'category'); ?>
                   <?php foreach($terms as $term): ?>
@@ -75,7 +92,7 @@ get_header(); ?>
         </div>
       </section>
 
-      <?php while(have_posts()): the_post(); ?>
+       <?php while(have_posts()): the_post(); ?>
       <section class="pd-none">
         <div id="accordion-slider" data-index="0">
           <?php foreach(range(1,4) as $number): ?>
