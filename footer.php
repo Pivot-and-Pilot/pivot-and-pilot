@@ -14,9 +14,18 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-map">
-			<?php echo do_shortcode('[wpgmza id="1"]');?>
-		</div>
+			<div class="site-map">
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfaoqKoMJio8xe8wi2UwKQg6H0wBv8nRE"></script>	
+			
+			<?php $location = get_field('footer_map', 4); ?>
+
+			<?php if( !empty($location) ): ?>
+					<div class="acf-map">
+							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pivot+%26+Pilot+Creative+Inc.">Pivot & Pilot Creative Inc.</a></div><!-- /.marker -->
+					</div><!-- acf-map -->
+
+			<?php endif; ?>
+			</div>
 		<div class="max-width-wrapper">
 		<a href="mailto:hello@pivotandpilot.com"><button class="align-center alternate">Book a Free Consultation</button></a>
 		<address>
