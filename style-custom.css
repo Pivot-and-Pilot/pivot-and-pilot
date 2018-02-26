@@ -534,9 +534,9 @@ ul {
 }
 
 #accordion-nav{
-  padding: 30px 15px;
+  padding: 0 6vw;
   position: absolute;
-    bottom:0;
+    bottom:90px;
     left:0;
   -webkit-transform:translate(0, 0);
       -ms-transform:translate(0, 0);
@@ -638,7 +638,7 @@ ul {
 }
 
 #accordion-slider figure{
-  padding: 15px 30px 90px 15px;
+  padding: 15px 6vw 90px 6vw;
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
