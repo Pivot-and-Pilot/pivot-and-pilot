@@ -329,7 +329,10 @@ add_action( 'widgets_init', 'pivotpilotcustom_widgets_init' );
  * Enqueue scripts and styles.
  */
 function pivotpilotcustom_scripts() {
-	wp_enqueue_style( 'pivotpilotcustom-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'pivotpilotcustom-style', get_stylesheet_uri() );
+  
+  // rellax
+  wp_enqueue_script('rellax', get_template_directory_uri() . '/js/rellax.min.js', array(), true);
 
   wp_enqueue_style( 'pivotpilotcustom-style-menu', get_template_directory_uri() . '/css/menu.css', true );
 

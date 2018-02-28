@@ -33,28 +33,35 @@ get_header(); ?>
         if( have_rows('front_page_how_we_do_it') ):
           while ( have_rows('front_page_how_we_do_it') ) : the_row(); 
         ?>
-          <div>
-            <div class="how-we-do-it-title">
-            <?php the_sub_field('how_we_do_it_title'); ?>
+        <div>
+          <div class="how-we-do-it-title">
+          <?php the_sub_field('how_we_do_it_title'); ?>
+            <div class="open-and-close-button">
+              <div class="line-one"></div>
+              <div class="line-two"></div>
             </div>
-            <div class="how-we-do-it-content-toggle">
+          </div>
+          <div class="how-we-do-it-content-toggle">
+            <div class="how-we-do-it-single-content-toggle">
             <?php
             if( have_rows('how_we_do_it_content') ):
               while ( have_rows('how_we_do_it_content') ) : the_row(); 
             ?>  
-              <div class="how-we-do-it-content-title">
-              <?php the_sub_field('how_we_do_it_content_title'); ?>
-              </div>
-              <div class="how-we-do-it-content-detail">
-              <?php the_sub_field('how_we_do_it_content_detail'); ?>
+              <div>
+                <div class="how-we-do-it-content-title">
+                <?php the_sub_field('how_we_do_it_content_title'); ?>
+                </div>
+                <div class="how-we-do-it-content-detail">
+                <?php the_sub_field('how_we_do_it_content_detail'); ?>
+                </div>
               </div>
             <?php
               endwhile;
             endif;
             ?>
+            </div>
             <a href="" class="how-we-do-it-content-view-projects">view projects</a>
-          </div>
-          
+          </div> 
         </div>
           
         <?php
@@ -65,13 +72,16 @@ get_header(); ?>
      
 
       <section>
-        <div class="max-width-wrapper">
+        <div class="featured-projects-background-square rellax" data-rellax-speed="-3"></div>
+        <div class="featured-projects-background-circle rellax" data-rellax-speed="2"></div>
+        <div>
           <div class="featured-projects-header">Featured projects</div>  
           <div id="featured-case-studies">
             <?php 
             $projects = get_posts(
               array(
               'post_type' => 'clients',
+              'numberposts' => 6,
               )
             );
             foreach($projects as $project): ?>
@@ -89,6 +99,9 @@ get_header(); ?>
             </article>
             <?php endforeach ?>
           </div>
+          <button class="font-page-view-more-projects">
+            <a href="<?php echo get_site_url() . '/portfolio'?>">view more projects</a>
+          </button>
         </div>
       </section>
 
