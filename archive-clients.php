@@ -90,12 +90,12 @@ get_header(); ?>
           <!-- end of the loop -->
 
           <!-- pagination here -->
-          <div class="pagecount">
+          <div class="pagecount" style="visibility: hidden;">
             <var id="curpage">1</var>
             <span>/</span>
             <var id="maxpage"><?php echo $wp_query->max_num_pages; ?></var>
           </div>
-          <nav>
+          <!-- <nav>
             <?php
               the_posts_pagination(array(
                 'mid_size' => -1,
@@ -103,7 +103,7 @@ get_header(); ?>
                 'next_text' => '',
               ));
             ?>
-          </nav>
+          </nav> -->
 
         <?php else : ?>
 
