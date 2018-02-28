@@ -326,12 +326,12 @@ function pivotpilotcustom_widgets_init() {
 add_action( 'widgets_init', 'pivotpilotcustom_widgets_init' );
 
 // ACF Google Maps API Key
-// function my_acf_init() {
+function my_acf_init() {
 	
-// 	acf_update_setting('google_api_key', '');
-// }
+	acf_update_setting('google_api_key', 'AIzaSyBfaoqKoMJio8xe8wi2UwKQg6H0wBv8nRE');
+}
 
-// add_action('acf/init', 'my_acf_init');
+add_action('acf/init', 'my_acf_init');
 
 /**
  * Enqueue scripts and styles.
@@ -360,6 +360,8 @@ function pivotpilotcustom_scripts() {
 
   wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js', array(), null, true);
 
+  wp_enqueue_script('googlemaps', get_template_directory_uri() . '/js/googlemaps.js', array(), null, true);
+  
   wp_enqueue_style( 'pivotpilotcustom-style-custom', get_template_directory_uri() . '/style-custom.css', false );
 
   wp_enqueue_style( 'pivotpilot__front-page-css', get_template_directory_uri() . '/css/front-page.css', true );  

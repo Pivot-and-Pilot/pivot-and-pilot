@@ -30,16 +30,18 @@ function pivotpilotcustom_get_clients( $request ) {
 
     $args = array(
       'paged'            => $paged,
+      'offset'           => $offset,
       'posts_per_page'   => 6,
       'post_type'        => 'clients',
       'tax_query' => $tax_query,
     );
-
+ 
     $return_data = array(
         'post_data' => array(),
         'post_meta' => array(
             'page_index'    => $page_index,
             'total_posts' => null,
+            'category'    => $category,
         )
     );
 

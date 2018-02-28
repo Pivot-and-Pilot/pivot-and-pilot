@@ -1,25 +1,27 @@
 // ----------------------------------------- SETUP PAGINATION IF JAVASCRIPT ENABLED && PAGINATION ENABLED
 
-if($('.page-numbers').length > 0){
-  $('.page-numbers').addClass('state-hidden');
-  $('.page-numbers.next')
-    .eq(0)
-    .clone()
-    .removeClass('next')
-    .addClass('prev')
-    .css('display', 'none')
-    .appendTo('.nav-links')
+// if($('.page-numbers').length > 0){
+//   $('.page-numbers').addClass('state-hidden');
+//   $('.page-numbers.next')
+//     .eq(0)
+//     .clone()
+//     .removeClass('next')
+//     .addClass('prev')
+//     .css('display', 'none')
+//     .appendTo('.nav-links')
 
   $('#archive-portfolio').data('tagId', 0);
-}
+// }
 
 // ----------------------------------------- DATA HANDLER
+
+var currCategory = 0;
 
 function populate_clients(data){
   
   const post_data = data.post_data;
-
   const $cloneArray = [];
+  newCategory = data.post_meta.category;  
 
   for(var i = 0; i < post_data.length; i++){
 
@@ -57,19 +59,25 @@ function populate_clients(data){
 
   }
 
-  $('.post-portfolio').addClass('state-hidden');
+  // $('.post-portfolio').addClass('state-hidden');
 
-  $('body')
-    .animate({'scrollTop': 0}, 500, 'swing', function(){
+  // $('body')
+    // .animate( 500, 'swing', function(){
 
       if($(window).width() < 768){
         $('#post-portfolio-container')
-          .css({'min-height': $('#post-portfolio-container').find(">:first-child").outerHeight() * $cloneArray.length})
-          .empty();
+          .css({'min-height': $('#post-portfolio-container').find(">:first-child").outerHeight() * $cloneArray.length});
+        if(currCategory != newCategory) {
+          $('#post-portfolio-container').empty(); 
+          currCategory = newCategory;          
+        }
       } else {
         $('#post-portfolio-container')
           .css({'min-height': $('#post-portfolio-container').find(">:first-child").outerHeight() * Math.ceil($cloneArray.length / 2)})
-          .empty();
+        if(currCategory != newCategory) {
+          $('#post-portfolio-container').empty(); 
+          currCategory = newCategory;
+        }
       }
 
       setTimeout(function(){
@@ -80,7 +88,7 @@ function populate_clients(data){
         }
       },500)
 
-    });
+    // });
 
 
   // Calculate page numbers
@@ -121,15 +129,14 @@ function populate_clients(data){
   } else {
     $('.page-numbers.prev').css('display', 'none');
   }
-
+ 
 }
 
 // ----------------------------------------- FILTER EVENT HANDLERS
 
 
 $('.filter_clients').on('click', function(e){
-
-  e.preventDefault();
+  e.preventDefault(); 
 
   const that = this;
 
@@ -186,72 +193,93 @@ $('.switch_taxonomy').on('click', function(e){
 
 // ----------------------------------------- PAGINATION EVENT HANDLERS
 
-$('.pagecount').click(_.throttle(function(){
-  $('.page-numbers').toggleClass('state-hidden');
-}));
+// $('.pagecount').click(_.throttle(function(){
+//   $('.page-numbers').toggleClass('state-hidden');
+// }));
 
-
-$('.nav-links').on('click', '.page-numbers.next', function(e){
-  e.preventDefault();
+// --------------------------- CHANGED PAGINATION TO ON SCROLL 
+$(window).scroll(function() {
 
   const curpageIndex = parseInt($('#curpage').html());
   const maxpageIndex = parseInt($('#maxpage').html());
-
-  var query_url = '?category=' + $('#archive-portfolio').data('tagId');
-
-  if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
-    query_url = query_url + '&taxonomy=post_tag';
-  }
-
-  if(curpageIndex < maxpageIndex){
-    const nextpageIndex = curpageIndex + 1;
-    $.ajax({
-      url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + nextpageIndex,
-      success: populate_clients,
-      error: function(){}
-    });
+  
+  var postOffset = $('.post-portfolio').length;
+  var query_url = '?category=' + $('#archive-portfolio').data('tagId') + '&post_offset=' + postOffset;
+  if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+      if(curpageIndex < maxpageIndex){
+        const nextpageIndex = curpageIndex + 1;  
+        $.ajax({
+          url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + nextpageIndex,
+          success: populate_clients,
+          error: function(){}
+        });
     $('#curpage').html(nextpageIndex);
+        
+      }
   }
-});
-
-$('.nav-links').on('click', '.page-numbers.prev',function(e){
-  e.preventDefault();
-
-  const curpageIndex = parseInt($('#curpage').html());
-  const maxpageIndex = parseInt($('#maxpage').html());
-
-  var query_url = '?category=' + $('#archive-portfolio').data('tagId');
-
-  if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
-    query_url = query_url + '&taxonomy=post_tag';
-  }
-
-  if(curpageIndex > 1){
-    const prevPageIndex = curpageIndex - 1;
-    $.ajax({
-      url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + prevPageIndex,
-      success: populate_clients,
-      error: function(){}
-    });
-    $('#curpage').html(prevPageIndex);
-  }
-});
-
-$('.nav-links').on('click', '.page-numbers:not(.prev, .next)', function(e){
-
-  e.preventDefault();
-  var query_url = '?category=' + $('#archive-portfolio').data('tagId');
-
-  if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
-    query_url = query_url + '&taxonomy=post_tag';
-  }
-
-  const pageIndex = parseInt($(this).html());
-  $.ajax({
-    url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + pageIndex,
-    success: populate_clients,
-    error: function(){}
-  });
-
-  $('#curpage').html(pageIndex);
 })
+
+// $('.nav-links').on('click', '.page-numbers.next', function(e){
+//   e.preventDefault();
+
+//   const curpageIndex = parseInt($('#curpage').html());
+//   const maxpageIndex = parseInt($('#maxpage').html());
+
+//   var query_url = '?category=' + $('#archive-portfolio').data('tagId');
+
+//   if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
+//     query_url = query_url + '&taxonomy=post_tag';
+//   }
+
+//   if(curpageIndex < maxpageIndex){
+//     const nextpageIndex = curpageIndex + 1;
+//     $.ajax({
+//       url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + nextpageIndex,
+//       success: populate_clients,
+//       error: function(){}
+//     });
+//     $('#curpage').html(nextpageIndex);
+//   }
+// });
+
+// $('.nav-links').on('click', '.page-numbers.prev',function(e){
+//   e.preventDefault();
+
+//   const curpageIndex = parseInt($('#curpage').html());
+//   const maxpageIndex = parseInt($('#maxpage').html());
+
+//   var query_url = '?category=' + $('#archive-portfolio').data('tagId');
+
+//   if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
+//     query_url = query_url + '&taxonomy=post_tag';
+//   }
+
+//   if(curpageIndex > 1){
+//     const prevPageIndex = curpageIndex - 1;
+//     $.ajax({
+//       url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + prevPageIndex,
+//       success: populate_clients,
+//       error: function(){}
+//     });
+//     $('#curpage').html(prevPageIndex);
+//   }
+// });
+
+// $('.nav-links').on('click', '.page-numbers:not(.prev, .next)', function(e){
+
+//   e.preventDefault();
+//   var query_url = '?category=' + $('#archive-portfolio').data('tagId');
+
+//   if($('#archive-portfolio').data("currTaxonomy") === 'post_tag' ){
+//     query_url = query_url + '&taxonomy=post_tag';
+//   }
+
+//   const pageIndex = parseInt($(this).html());
+//   $.ajax({
+//     url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + pageIndex,
+//     success: populate_clients,
+//     error: function(){}
+//   });
+
+//   $('#curpage').html(pageIndex);
+// })

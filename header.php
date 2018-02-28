@@ -80,7 +80,8 @@
 				<ul aria-expanded="false" class="nav-menu">
 					<a href="<?php echo site_url('/'); ?>">Pivot</a>
 					<li id="inner-menu-toggle">
-						<span>Services</span>
+					<a href="<?php echo site_url('/services'); ?>">Services</a>
+						
 						
 					</li>
 					<li><a href="<?php echo site_url('/portfolio'); ?>">Portfolio</a></li>

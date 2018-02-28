@@ -15,47 +15,47 @@ get_header(); ?>
 <?php $curr_taxonomy = get_query_var('taxonomy') ? get_query_var('taxonomy') : 'category' ?>
 
   <div id="primary" class="content-area clear-header">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main"> 
       <section id="archive-portfolio" class="archive-portfolio" data-curr-taxonomy="<?php echo $curr_taxonomy ?>">
-        <menu class="tabs">
+        <!-- <menu class="tabs">
           <li><a class="switch_taxonomy" href="<?php echo site_url('portfolio'); ?>" data-taxonomy="category">Services</a></li>
           <li><a class="switch_taxonomy" href="<?php echo site_url('portfolio'); ?>?taxonomy=post_tag" data-taxonomy="post_tag">Industries</a></li>
-        </menu>
+        </menu> -->
         <div class="max-width-wrapper">
         <nav class="dropdown dropdown-services">
 
-          <?php if($curr_category): ?>
+          <!-- <?php if($curr_category): ?> -->
             <li class="state-active"><a class="filter_clients" data-tag-id="<?php echo get_term( $curr_category )->term_id ?>" href="<?php echo site_url('portfolio?cat=' . get_term( $curr_category )->term_ID); ?>"><?php echo get_term( $curr_category )->name ?></a><div class="term-description"><?php echo get_term( $curr_category )->term-description ?></div></li>
             <li><a class="filter_clients" data-tag-id="0" href="<?php echo site_url('portfolio'); ?>">All Services</a></li>
-          <?php else: ?>
+          <!-- <?php else: ?> -->
             <li class="state-active"><a class="filter_clients" data-tag-id="0" href="<?php echo site_url('portfolio'); ?>">All Services</a></li>
-          <?php endif ?>
+          <!-- <?php endif ?> -->
 
           <?php $terms = get_terms('category'); ?>
 
           <?php foreach($terms as $term): ?>
-            <?php if($term->term_id != $curr_category): ?>
+            <!-- <?php if($term->term_id != $curr_category): ?> -->
               <li><a class="filter_clients" data-tag-id="<?php echo $term->term_id; ?>" href="<?php echo site_url('portfolio?cat=' . $term->term_id); ?>"><?php echo $term->name ?></a><div class="term-description"><?php echo $term->description; ?></div></li>
-            <?php endif; ?>
+            <!-- <?php endif; ?> -->
           <?php endforeach?>
         
         </nav>
 
         <nav class="dropdown dropdown-industries">
 
-          <?php if($curr_tag): ?>
+          <!-- <?php if($curr_tag): ?> -->
             <li class="state-active"><a class="filter_clients post_tag" data-tag-id="<?php echo get_term_by('slug', $curr_tag, 'post_tag')->term_id; ?>" href="<?php echo site_url('portfolio?taxonomy=post_tag&tag=' . get_term_by('slug', $curr_tag, 'post_tag')->slug); ?>"><?php echo get_term_by('slug', $curr_tag, 'post_tag')->name; ?></a></li>
             <li><a class="filter_clients" href="<?php echo site_url('portfolio?taxonomy=post_tag'); ?>">All Industries</a></li>
-          <?php else: ?>
+          <!-- <?php else: ?> -->
             <li class="state-active"><a class="filter_clients" data-tag-id="0">All Industries</a></li>
-          <?php endif ?>
+          <!-- <?php endif ?> -->
 
           <?php $terms = get_terms('post_tag'); ?>
 
           <?php foreach($terms as $term): ?>
-            <?php if($term->slug != $curr_tag): ?>
+            <!-- <?php if($term->slug != $curr_tag): ?> -->
               <li><a class="filter_clients post_tag" data-tag-id="<?php echo $term->term_id ?>" href="<?php echo site_url('portfolio?taxonomy=post_tag&tag=' . $term->slug); ?>"><?php echo $term->name ?></a></li>
-            <?php endif; ?>
+            <!-- <?php endif; ?> -->
           <?php endforeach?>
         
         </nav>
@@ -90,12 +90,12 @@ get_header(); ?>
           <!-- end of the loop -->
 
           <!-- pagination here -->
-          <div class="pagecount">
+          <div class="pagecount" style="visibility: hidden;">
             <var id="curpage">1</var>
             <span>/</span>
             <var id="maxpage"><?php echo $wp_query->max_num_pages; ?></var>
           </div>
-          <nav>
+          <!-- <nav>
             <?php
               the_posts_pagination(array(
                 'mid_size' => -1,
@@ -103,7 +103,7 @@ get_header(); ?>
                 'next_text' => '',
               ));
             ?>
-          </nav>
+          </nav> -->
 
         <?php else : ?>
 
