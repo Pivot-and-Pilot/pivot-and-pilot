@@ -386,7 +386,7 @@ p{
 
 section {
   background: white;
-  padding: 30px 15px;
+  padding: 6vw;
   position: relative;
 }
 @media(min-width:768px){
@@ -397,7 +397,7 @@ section {
     padding: 75px 60px;}}
 @media(min-width:1200px){
   section{
-    padding: 90px 60px;}}
+    padding: 60px 120px;}}
 
 section > p {
   font-family: arno-pro;
@@ -534,9 +534,9 @@ ul {
 }
 
 #accordion-nav{
-  padding: 30px 15px;
+  padding: 0 6vw;
   position: absolute;
-    bottom:0;
+    bottom:90px;
     left:0;
   -webkit-transform:translate(0, 0);
       -ms-transform:translate(0, 0);
@@ -556,7 +556,7 @@ ul {
     left: 45px;}}
 @media(min-width:1200px){
   #accordion-nav{
-    bottom: 30px;}}
+    bottom: 120px;}}
 @media(min-width:1320px){
   #accordion-nav{
     left: calc(calc(100vw - 1230px) / 2);}}
@@ -638,7 +638,7 @@ ul {
 }
 
 #accordion-slider figure{
-  padding: 15px 30px 90px 15px;
+  padding: 15px 6vw 90px 6vw;
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
@@ -664,7 +664,7 @@ ul {
   }}
 @media(min-width:1200px){
   #accordion-slider figure{
-    padding: 150px 60px 150px 60px;
+    padding: 100px 60px 100px 60px;
   }}
 
 @media(min-width:1025px){
@@ -1092,7 +1092,7 @@ ul {
 
 #colophon {
   background: #443CFF;
-  padding: 15px;
+  padding: 6vw;
   position: relative;}
 @media(min-width:768px){
   #colophon{
@@ -1332,10 +1332,14 @@ ul {
     margin-top: -25px;}}
 @media(min-width:1025px){
   #featured-case-studies{
-    margin-top: -25px;
+    margin-top: 50px;
     margin-left: 0px;
     margin-right: 0px;
-    overflow: hidden;}}
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }}
 
 @media(min-width:1025px){
   #featured-case-studies .post-portfolio h2{
@@ -1353,11 +1357,17 @@ ul {
 
 #featured-case-studies article{
   display: inline-block;
-  margin: 0 3.75px;
+  margin: 0;
   vertical-align: top;}
 @media(min-width:1025px){
   #featured-case-studies article{
-    padding: 0px 45px;
+    width: 50%;
+  }
+  #featured-case-studies article:nth-child(odd) {
+    padding: 20px 10px 0 0;
+  }
+  #featured-case-studies article:nth-child(even) {
+    padding: 20px 0 0 10px;
   }
 }
 
@@ -4504,6 +4514,7 @@ footer .site-footer {
 .post-portfolio img{
   display: block;
   position: relative;
+  width: 100%;
 }
 
 .post-portfolio > a > img {
@@ -4514,7 +4525,7 @@ footer .site-footer {
 
 .post-portfolio h2{
   font-weight: 600;
-  margin-top: 15px;
+  margin-top: 10px;
   max-width: 12.5em;}
 @media(min-width:768px){
   .post-portfolio h2{
@@ -4537,8 +4548,10 @@ footer .site-footer {
 
 .post-portfolio p{
   font-family: arno-pro;
-  font-size: 1.25em;
-  margin-top: 7.5px;}
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
 
 .post-portfolio span{}
 @media(min-width:1025px){

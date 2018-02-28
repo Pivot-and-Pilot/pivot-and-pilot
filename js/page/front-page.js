@@ -1,35 +1,35 @@
-$('#featured-case-studies').slick({
-  adaptiveHeight: true,
-  arrows: false,
-  centerMode: true,
-  centerPadding: '11.25px',
-  infinite: true,
-  initialSlide: 1,
-  mobileFirst: true,
-  responsive: [
-  {
-    breakpoint: 767,
-    settings: {
-      adaptiveHeight: false,
-      centerPadding: '60px',
-    }
-  },
-  {
-    breakpoint: 1024,
-    settings: {
-      adaptiveHeight: false,
-      arrows: false,
-      autoplay: false,
-      centerMode: false,
-      centerPadding: 0,
-      cssEase: 'linear',
-      dots: true,
-      fade: true,
-      infinite: true
-    }
-  }
-  ]
-});
+// $('#featured-case-studies').slick({
+//   adaptiveHeight: true,
+//   arrows: false,
+//   centerMode: true,
+//   centerPadding: '11.25px',
+//   infinite: true,
+//   initialSlide: 1,
+//   mobileFirst: true,
+//   responsive: [
+//   {
+//     breakpoint: 767,
+//     settings: {
+//       adaptiveHeight: false,
+//       centerPadding: '60px',
+//     }
+//   },
+//   {
+//     breakpoint: 1024,
+//     settings: {
+//       adaptiveHeight: false,
+//       arrows: false,
+//       autoplay: false,
+//       centerMode: false,
+//       centerPadding: 0,
+//       cssEase: 'linear',
+//       dots: true,
+//       fade: true,
+//       infinite: true
+//     }
+//   }
+//   ]
+// });
 
 function resetAccordion(){
   $('#accordion-slider > figure')
@@ -246,3 +246,23 @@ function circleContract(){
 }
 
 })();
+
+
+jQuery(document).ready(function($){
+
+  (function howWeDoItToggle () {
+    $('.how-we-do-it-title').on('click', (e) => {
+        $($(e.target).siblings()).toggle();
+        $($(e.target).children().children()[1]).toggle();
+    })
+  })();
+
+  (function rellax () {
+    if ($(window).width() > 768) {
+        var rellax = new Rellax('.rellax', {
+            center: true,
+        });   
+    }
+  })();
+
+})

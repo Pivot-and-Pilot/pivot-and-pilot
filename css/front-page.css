@@ -1,0 +1,142 @@
+.front-page__how-we-do-it .front-page__how-we-do-it-header {
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.8em;
+}
+.front-page__how-we-do-it .how-we-do-it-title {
+  height: 60px;
+  line-height: 60px;
+  text-transform: capitalize;
+  font-size: 1.4em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.front-page__how-we-do-it .how-we-do-it-title .open-and-close-button {
+  display: none;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle {
+  background-color: rgb(238, 238, 253);
+  padding: 120px;
+  margin: 0 -120px;
+  position: relative;
+  transition: all 1s ease-in-out;
+  display: none;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-title {
+  margin-top: 6vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 0.8em;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-title:nth-child(1) {
+  margin-top: 0;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-detail {
+  margin-bottom: 6vw;
+}
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-view-projects {
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-size: 1.3em;
+}
+
+/* featured projects */
+.featured-projects-header {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+.featured-projects-background-square {
+  height: 55vw;
+  width: 55vw;
+  background: linear-gradient(#443CFF, #fff); 
+  position: absolute;
+  right: 0;
+  top: 150px;
+  opacity: 0.6;
+}
+.featured-projects-background-circle {
+  height: 50vw;
+  width: 50vw;
+  border-radius: 50%;
+  background: linear-gradient(#443CFF, #fff); 
+  position: absolute;
+  left: 0;
+  top: 600px;
+  opacity: 0.6;
+}
+
+/* ====================================================== */
+/* ======================= DESKTOP ====================== */
+/* ====================================================== */
+
+@media only screen and (min-width: 1050px) {
+  
+  .front-page__how-we-do-it .front-page__how-we-do-it-header {
+    font-size: 1.5em;
+  }
+  .front-page__how-we-do-it .how-we-do-it-title {
+    font-size: 3em;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+  }
+  .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button {
+    display: block;
+    height: 1.15em;
+    width: 1.15em;
+    margin-left: 30px;
+    position: relative;
+  }
+  .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button .line-one {
+    height: 2px;
+    width: 60%;
+    background-color: #443CFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button .line-two {
+    height: 2px;
+    width: 60%;
+    background-color: #443CFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle {
+    display: flex;
+  }
+  .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div {
+    width: 50%;
+  }
+  .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div:nth-child(2) {
+    padding-left: 10vw;
+  }
+  .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-title {
+    font-size: 1.5em;
+  }
+  .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-detail {
+    font-size: 1.5em;
+  }
+
+  /* featured projects */
+  .featured-projects-header {
+    font-size: 1.5em;
+  }
+  .font-page-view-more-projects {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+  }
+  .post-portfolio > .post-meta {
+    display: none;
+  }
+}
