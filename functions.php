@@ -344,6 +344,9 @@ function pivotpilotcustom_scripts() {
 
   wp_enqueue_style( 'pivotpilotcustom-style-menu', get_template_directory_uri() . '/css/menu.css', true );
 
+  // services page
+  wp_enqueue_style( 'pivotpilotcustom-services-page', get_template_directory_uri() . '/css/services-page.css', true );
+
   wp_enqueue_style('pivotpilotcustom-slick', get_template_directory_uri() . '/js/slick/slick.css', true );
 
   wp_enqueue_style('pivotpilotcustom-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css', true );
@@ -373,6 +376,10 @@ function pivotpilotcustom_scripts() {
 
 	if ( is_front_page() ) {
 		wp_enqueue_script('front-page', get_template_directory_uri() . '/js/page/front-page.js', array(), null, true);
+  }
+  
+  if ( is_page('services') ) {
+		wp_enqueue_script('services-page', get_template_directory_uri() . '/js/page/services-page.js', array(), null, true);
 	}
 
   if ( is_page('about') ){
