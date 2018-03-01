@@ -369,7 +369,7 @@ function pivotpilotcustom_scripts() {
   wp_enqueue_script('googlemaps', get_template_directory_uri() . '/js/googlemaps.js', array(), null, true);
   
   wp_enqueue_style( 'pivotpilotcustom-style-custom', get_template_directory_uri() . '/style-custom.css', false );
-  if ( is_front_page() ) {
+  if ( is_front_page() || is_page('services') ) {
     wp_enqueue_style( 'pivotpilot__front-page-css', get_template_directory_uri() . '/css/front-page.css', true );  
   }
 
