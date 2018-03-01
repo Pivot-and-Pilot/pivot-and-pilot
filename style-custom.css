@@ -2456,8 +2456,11 @@ ul {
   /* display: none; */
 }
 @media(min-width:1025px){
-  .archive-portfolio .dropdown{
+  .archive-portfolio .dropdown-industries{
     margin-bottom: 15px;
+  }
+  .archive-portfolio .dropdown-services{
+    margin-bottom: 0px;
   }
 }
 
