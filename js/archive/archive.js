@@ -15,7 +15,7 @@
 
 // ----------------------------------------- DATA HANDLER
 
-var currCategory = 0;
+var currCategory;
 
 function populate_clients(data){
   
@@ -67,14 +67,14 @@ function populate_clients(data){
       if($(window).width() < 768){
         $('#post-portfolio-container')
           .css({'min-height': $('#post-portfolio-container').find(">:first-child").outerHeight() * $cloneArray.length});
-        if(currCategory != newCategory) {
+        if(currCategory != newCategory || currCategory == 0) {
           $('#post-portfolio-container').empty(); 
           currCategory = newCategory;          
         }
       } else {
         $('#post-portfolio-container')
           .css({'min-height': $('#post-portfolio-container').find(">:first-child").outerHeight() * Math.ceil($cloneArray.length / 2)})
-        if(currCategory != newCategory) {
+        if(currCategory != newCategory || currCategory == 0) {
           $('#post-portfolio-container').empty(); 
           currCategory = newCategory;
         }
@@ -141,10 +141,17 @@ $('.filter_clients').on('click', function(e){
   const that = this;
 
   $('#curpage').html(1);
-
+  const isServices = $(this).parent().parent().hasClass('dropdown-services');
+  const isIndustries = $(this).parent().parent().hasClass('dropdown-industries');
+  
   $(this).parent().siblings().removeClass('state-active');
   $(this).parent().addClass('state-active');
 
+  if (isServices) {
+    $('.dropdown-industries > li').removeClass('state-active');
+  } else if (isIndustries) {
+    $('.dropdown-services > li').removeClass('state-active');    
+  }
 
   $('#current-term-description').addClass('state-hidden');
   setTimeout(function(){

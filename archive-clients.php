@@ -44,10 +44,10 @@ get_header(); ?>
         <nav class="dropdown dropdown-industries">
 
           <!-- <?php if($curr_tag): ?> -->
-            <li class="state-active"><a class="filter_clients post_tag" data-tag-id="<?php echo get_term_by('slug', $curr_tag, 'post_tag')->term_id; ?>" href="<?php echo site_url('portfolio?taxonomy=post_tag&tag=' . get_term_by('slug', $curr_tag, 'post_tag')->slug); ?>"><?php echo get_term_by('slug', $curr_tag, 'post_tag')->name; ?></a></li>
+            <li class=""><a class="filter_clients post_tag" data-tag-id="<?php echo get_term_by('slug', $curr_tag, 'post_tag')->term_id; ?>" href="<?php echo site_url('portfolio?taxonomy=post_tag&tag=' . get_term_by('slug', $curr_tag, 'post_tag')->slug); ?>"><?php echo get_term_by('slug', $curr_tag, 'post_tag')->name; ?></a></li>
             <li><a class="filter_clients" href="<?php echo site_url('portfolio?taxonomy=post_tag'); ?>">All Industries</a></li>
           <!-- <?php else: ?> -->
-            <li class="state-active"><a class="filter_clients" data-tag-id="0">All Industries</a></li>
+            <li class=""><a class="filter_clients" data-tag-id="0">All Industries</a></li>
           <!-- <?php endif ?> -->
 
           <?php $terms = get_terms('post_tag'); ?>
