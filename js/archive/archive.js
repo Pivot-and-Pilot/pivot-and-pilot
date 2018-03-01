@@ -21,7 +21,7 @@ function populate_clients(data){
   
   const post_data = data.post_data;
   const $cloneArray = [];
-  newCategory = data.post_meta.category;  
+  var newCategory = data.post_meta.category;  
 
   for(var i = 0; i < post_data.length; i++){
 
@@ -93,7 +93,7 @@ function populate_clients(data){
 
   // Calculate page numbers
   const curpage = data.post_meta.paged;
-  const maxpage = data.post_meta.total_pages
+  const maxpage = data.post_meta.total_pages;
 
   $('#maxpage').html(maxpage);
 
@@ -115,20 +115,20 @@ function populate_clients(data){
   }
 
   $('.page-numbers').not('.prev, .next').remove();
-  $('.nav-links').append(new_page_nums);
+  // $('.nav-links').append(new_page_nums);
 
   // Hide or show previous and next links
-  if(curpage < maxpage){
-    $('.page-numbers.next').css('display', 'inline-block');
-  } else {
-    $('.page-numbers.next').css('display', 'none');
-  }
+  // if(curpage < maxpage){
+  //   $('.page-numbers.next').css('display', 'inline-block');
+  // } else {
+  //   $('.page-numbers.next').css('display', 'none');
+  // }
 
-  if(curpage > 1){
-    $('.page-numbers.prev').css('display', 'inline-block');
-  } else {
-    $('.page-numbers.prev').css('display', 'none');
-  }
+  // if(curpage > 1){
+  //   $('.page-numbers.prev').css('display', 'inline-block');
+  // } else {
+  //   $('.page-numbers.prev').css('display', 'none');
+  // }
  
 }
 
@@ -153,6 +153,7 @@ $('.filter_clients').on('click', function(e){
     $('#current-term-description').removeClass('state-hidden');
   }, 500);
 
+  var postOffset = $('.post-portfolio').length;  
   var query_url = '?category=' + $(this).data('tagId');
 
   $('#archive-portfolio').data('tagId', $(this).data('tagId'));
@@ -162,33 +163,33 @@ $('.filter_clients').on('click', function(e){
   }
 
   $.ajax({
-    url: '../wp-json/posts/v1/clients' + query_url,
+    url: '../wp-json/posts/v1/clients' + query_url + '&post_offset=' + postOffset,
     success: _.debounce(populate_clients, 250),
     error: function(){}
   });
 
 });
 
-$('.switch_taxonomy').on('click', function(e){
-  e.preventDefault();
-  $('#archive-portfolio').data('currTaxonomy', $(this).data('taxonomy'));
-  $('#archive-portfolio').attr('data-curr-taxonomy', $(this).data('taxonomy'));
+// $('.switch_taxonomy').on('click', function(e){
+//   e.preventDefault();
+//   $('#archive-portfolio').data('currTaxonomy', $(this).data('taxonomy'));
+//   $('#archive-portfolio').attr('data-curr-taxonomy', $(this).data('taxonomy'));
 
-  $('#curpage').html(1);
-  $('#archive-portfolio').data('tagId', 0);
+//   $('#curpage').html(1);
+//   $('#archive-portfolio').data('tagId', 0);
 
-  $('#current-term-description')
-    .css({height: 0})
-    .addClass('state-hidden');
-  $('.dropdown>:first-child').siblings().removeClass('state-active');
-  $('.dropdown>:first-child').addClass('state-active');
+//   $('#current-term-description')
+//     .css({height: 0})
+//     .addClass('state-hidden');
+//   $('.dropdown>:first-child').siblings().removeClass('state-active');
+//   $('.dropdown>:first-child').addClass('state-active');
 
-  $.ajax({
-    url: '../wp-json/posts/v1/clients',
-    success: populate_clients,
-    error: function(){}
-  });
-});
+//   $.ajax({
+//     url: '../wp-json/posts/v1/clients',
+//     success: populate_clients,
+//     error: function(){}
+//   });
+// });
 
 
 // ----------------------------------------- PAGINATION EVENT HANDLERS
@@ -204,12 +205,12 @@ $(window).scroll(function() {
   const maxpageIndex = parseInt($('#maxpage').html());
   
   var postOffset = $('.post-portfolio').length;
-  var query_url = '?category=' + $('#archive-portfolio').data('tagId') + '&post_offset=' + postOffset;
+  var query_url = '?category=' + $('#archive-portfolio').data('tagId');
   if ($(window).scrollTop() == $(document).height() - $(window).height()) {
       if(curpageIndex < maxpageIndex){
         const nextpageIndex = curpageIndex + 1;  
         $.ajax({
-          url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + nextpageIndex,
+          url: '../wp-json/posts/v1/clients' + query_url + '&paged=' + nextpageIndex  + '&post_offset=' + postOffset,
           success: populate_clients,
           error: function(){}
         });
