@@ -17,15 +17,16 @@
   display: none;
 }
 .front-page__how-we-do-it .how-we-do-it-single-wrap {
-  max-height: 110px;
-  margin: 0 -120px;
-  padding: 0 120px;
+  max-height: 60px;
+  margin: 0 -6vw;
+  padding: 0 6vw;
   overflow: hidden;
+  width: 100vw;
   transition: max-height 1s ease-in-out;
 }
 .front-page__how-we-do-it .how-we-do-it-content-toggle {
   background-color: rgb(238, 238, 253);
-  padding: 120px;
+  padding: 6vw 120px;
   margin: 0 -120px;
   position: relative;
   transition: all 1s ease-in-out;
@@ -88,6 +89,11 @@
   
   .front-page__how-we-do-it .front-page__how-we-do-it-header {
     font-size: 1.5em;
+  }
+  .front-page__how-we-do-it .how-we-do-it-single-wrap {
+    max-height: 110px;
+    margin: 0 -120px;
+    padding: 0 120px;
   }
   .front-page__how-we-do-it .how-we-do-it-title {
     font-size: 3em;
