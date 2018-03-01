@@ -85,6 +85,12 @@
     display: flex;
     flex-direction: row;
   }
+  .front-page__how-we-do-it .how-we-do-it-title:hover .open-and-close-button .line-one {
+    transform: rotate(180deg);
+  }
+  .front-page__how-we-do-it .how-we-do-it-title:hover .open-and-close-button .line-two {
+    transform: rotate(90deg);
+  }
   .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button {
     display: block;
     height: 1.15em;
@@ -94,21 +100,18 @@
   }
   .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button .line-one {
     height: 2px;
-    width: 60%;
+    width: 70%;
     background-color: #443CFF;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: calc(50% - 1px) auto 0;
+    transform-origin: 50% 50%;
+    transition: all 0.2s ease-in-out;
   }
   .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button .line-two {
-    height: 2px;
-    width: 60%;
+    height: 70%;
+    width: 2px;
+    margin: calc(-35% - 1px) auto 0;
     background-color: #443CFF;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transition: all 0.2s ease-in-out;
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle {
     display: flex;
@@ -139,4 +142,34 @@
   .post-portfolio > .post-meta {
     display: none;
   }
+}
+
+/* ====================================================== */
+/* ======================= X LARGE ====================== */
+/* ====================================================== */
+
+@media only screen and (min-width: 1450px) {
+
+  .front-page__how-we-do-it .front-page__how-we-do-it-header,  .front-page__how-we-do-it .how-we-do-it-content-toggle {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: rgb(238, 238, 253);
+  }
+  .front-page__how-we-do-it .how-we-do-it-title {
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+
+
+
+  #featured-case-studies {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .featured-projects-header {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
 }
