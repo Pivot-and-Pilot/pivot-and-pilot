@@ -59,7 +59,7 @@ get_header(); ?>
             endif;
             ?>
             </div>
-            <a href="" class="how-we-do-it-content-view-projects">view projects</a>
+            <a href="<?php echo get_site_url() . '/portfolio'?>" class="how-we-do-it-content-view-projects">view projects</a>
           </div> 
         </div>
           
