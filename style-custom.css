@@ -4234,6 +4234,7 @@ footer .site-footer {
 }
 
 .pagecount{
+  /* visibility: hidden; */
   border: 1px solid #443CFF;
   cursor: pointer;
   font-family: arno-pro;
@@ -4583,9 +4584,9 @@ footer .site-footer {
     -webkit-transition-delay: 0s;
          -o-transition-delay: 0s;
             transition-delay: 0s;
-    -webkit-transform: translate(0, 200%);
-        -ms-transform: translate(0, 200%);
-            transform: translate(0, 200%);}}
+    -webkit-transform: translate(0, 275%);
+        -ms-transform: translate(0, 275%);
+            transform: translate(0, 275%);}}
 
 @media(min-width:1025px){
   .post-portfolio:hover span,

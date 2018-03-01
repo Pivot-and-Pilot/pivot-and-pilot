@@ -366,9 +366,9 @@ function pivotpilotcustom_scripts() {
   wp_enqueue_script('googlemaps', get_template_directory_uri() . '/js/googlemaps.js', array(), null, true);
   
   wp_enqueue_style( 'pivotpilotcustom-style-custom', get_template_directory_uri() . '/style-custom.css', false );
-
-  wp_enqueue_style( 'pivotpilot__front-page-css', get_template_directory_uri() . '/css/front-page.css', true );  
-
+  if ( is_front_page() ) {
+    wp_enqueue_style( 'pivotpilot__front-page-css', get_template_directory_uri() . '/css/front-page.css', true );  
+  }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
