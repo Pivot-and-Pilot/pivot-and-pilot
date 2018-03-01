@@ -16,13 +16,23 @@
 .front-page__how-we-do-it .how-we-do-it-title .open-and-close-button {
   display: none;
 }
+.front-page__how-we-do-it .how-we-do-it-single-wrap {
+  max-height: 110px;
+  margin: 0 -120px;
+  padding: 0 120px;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
 .front-page__how-we-do-it .how-we-do-it-content-toggle {
   background-color: rgb(238, 238, 253);
   padding: 120px;
   margin: 0 -120px;
   position: relative;
   transition: all 1s ease-in-out;
-  display: none;
+  /* display: none; */
+  /* height: 0;
+  padding: 0 120px;
+  overflow: hidden; */
 }
 .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-title {
   margin-top: 6vw;
