@@ -344,6 +344,9 @@ function pivotpilotcustom_scripts() {
 
   wp_enqueue_style( 'pivotpilotcustom-style-menu', get_template_directory_uri() . '/css/menu.css', true );
 
+  // 404 page
+  wp_enqueue_style( 'pivotpilotcustom-404-page', get_template_directory_uri() . '/css/404.css', true );
+
   // services page
   wp_enqueue_style( 'pivotpilotcustom-services-page', get_template_directory_uri() . '/css/services-page.css', true );
 
