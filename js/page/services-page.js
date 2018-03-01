@@ -2,8 +2,17 @@ jQuery(document).ready(function($){
 
   (function howWeDoItToggle () {
     $('.how-we-do-it-title').on('click', (e) => {
-        $($(e.target).siblings()).toggle();
+      if ( $($(e.target).parent()).css('height') == '110px' ) {
+        $($(e.target).parent()).css({
+          'max-height': '2000px',
+        });
         $($(e.target).children().children()[1]).toggle();
+      } else {
+        $($(e.target).parent()).css({
+          'max-height': '110px',
+        });
+        $($(e.target).children().children()[1]).toggle();
+      }
     })
   })();
 

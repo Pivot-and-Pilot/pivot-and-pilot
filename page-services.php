@@ -32,7 +32,7 @@ get_header(); ?>
         if( have_rows('services_page_how_we_do_it') ):
           while ( have_rows('services_page_how_we_do_it') ) : the_row(); 
         ?>
-        <div>
+        <div class="how-we-do-it-single-wrap">
           <div class="how-we-do-it-title">
           <?php the_sub_field('how_we_do_it_title'); ?>
             <div class="open-and-close-button">
