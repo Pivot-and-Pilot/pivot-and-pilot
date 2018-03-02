@@ -21,7 +21,7 @@
 
 			<?php if( !empty($location) ): ?>
 					<div class="acf-map">
-							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pivot+%26+Pilot+Creative+Inc.">Pivot & Pilot Creative Inc.</a></div><!-- /.marker -->
+						<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pivot+%26+Pilot+Creative+Inc.">Pivot & Pilot Creative Inc.</a></div><!-- /.marker -->
 					</div><!-- acf-map -->
 
 			<?php endif; ?>

@@ -69,7 +69,7 @@
    
     var template = [
       '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 62.49 178.16">',
-      '<defs><style>.cls-1,.cls-3{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{stroke:#f0f0ff;stroke-width:5.73px;}.cls-4{fill:#f0f0ff;}</style><clipPath id="clip-path"><rect class="cls-1" width="62.49" height="178.16"/></clipPath></defs>',
+      '<defs><style>.cls-1,.cls-3{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{stroke:#fff;stroke-width:5.73px;}.cls-4{fill:#fff;}</style><clipPath id="clip-path"><rect class="cls-1" width="62.49" height="178.16"/></clipPath></defs>',
       '<title>P&amp;amp;P_icons</title>',
       '<g class="cls-2"><line class="cls-3" x1="31.25" y1="49.66" x2="31.25" y2="178.16"/><path class="cls-4" d="M31.25,62.49A31.25,31.25,0,1,0,0,31.25,31.24,31.24,0,0,0,31.25,62.49"/>',
       '</g>',

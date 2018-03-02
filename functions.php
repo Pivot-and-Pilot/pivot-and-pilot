@@ -328,7 +328,7 @@ add_action( 'widgets_init', 'pivotpilotcustom_widgets_init' );
 // ACF Google Maps API Key
 function my_acf_init() {
 	
-	acf_update_setting('google_api_key', 'AIzaSyBfaoqKoMJio8xe8wi2UwKQg6H0wBv8nRE');
+	acf_update_setting('google_api_key', 'AIzaSyDvk8V5jh5obvt8tE-tDGBME2WM8Mm2shI');
 }
 
 add_action('acf/init', 'my_acf_init');
