@@ -11,6 +11,11 @@ get_header(); ?>
 
 <?php if(get_field(film_animation) && get_field(film_animation_video)): ?>
   <div id="player">
+    <button class="hamburger state-active" id="exit">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <iframe src="https://player.vimeo.com/video/207343737" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 <?php endif ?>  
