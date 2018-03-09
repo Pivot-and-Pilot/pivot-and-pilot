@@ -17,23 +17,22 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-      <?php while(have_posts()): the_post(); ?>
-      <section id="landing" class="bg-light-purple pd-extra">
-        <canvas id="gradient"></canvas>
-        <div class="max-width-wrapper">
-          <h1><?php the_excerpt(); ?></h1>
-          <a href="<?php echo site_url('/portfolio'); ?>"><button id="viewwork" class="alternate">View Our Work</button></a>
+      <section class="services-page-intro">
+        <div class="services-page-intro-title">
+        <?php the_field('services_page_intro_title')?>
+        </div>
+        <div class="services-page-intro-detail">
+        <?php the_field('services_page_intro_detail')?>
         </div>
       </section>
-      <?php endwhile ?>
 
       <section class="front-page__how-we-do-it">
         <div class="front-page__how-we-do-it-header">how we do it</div>
         <?php
-        if( have_rows('front_page_how_we_do_it') ):
-          while ( have_rows('front_page_how_we_do_it') ) : the_row(); 
+        if( have_rows('services_page_how_we_do_it') ):
+          while ( have_rows('services_page_how_we_do_it') ) : the_row(); 
         ?>
-        <div>
+        <div class="how-we-do-it-single-wrap">
           <div class="how-we-do-it-title">
           <?php the_sub_field('how_we_do_it_title'); ?>
             <div class="open-and-close-button">
