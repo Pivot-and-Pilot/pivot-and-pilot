@@ -3,7 +3,7 @@
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .front-page__how-we-do-it .how-we-do-it-title {
   height: 60px;
@@ -156,7 +156,43 @@
     margin-top: 50px;
   }
   .post-portfolio > .post-meta {
-    display: none;
+    color: white;
+    left: 15px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 2;
+  }
+  .post-portfolio:nth-child(even) > .post-meta {
+    left: 25px;
+  }
+  .post-portfolio > .post-meta > h2 {
+    font-size: 0.8em !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px;
+    margin-top: 0;
+    opacity: 0;
+    text-transform: uppercase;
+    transform: translate(0, 0);
+    width: 100%;
+  }
+  .post-portfolio > a::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: #443CFF;
+    display: block;
+    z-index: 1;
+    mix-blend-mode: multiply;
+    opacity: 0;
+  }
+  .post-portfolio:hover a::before {
+    opacity: 0.8;
+  }
+  .post-portfolio:hover .post-meta > h2 {
+    opacity: 1;
   }
 }
 

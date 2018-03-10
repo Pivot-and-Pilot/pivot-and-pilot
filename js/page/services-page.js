@@ -28,7 +28,6 @@ jQuery(document).ready(function($){
           $($(e.target).children().children()[1]).toggle();
         }
       }
-     
     })
   })();
 
