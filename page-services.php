@@ -88,6 +88,7 @@ get_header(); ?>
               <a href="<?php echo get_permalink($project) ?>"><img src="<?php echo get_the_post_thumbnail_url($project, 'large'); ?>"/></a>
               <div class="post-meta">
                 <h2><?php echo $project->post_title ?></h2>
+                <h3 class="hidden-excerpt"><?php echo $project->post_excerpt; ?></h3>
                 <p>
                   <?php $terms = get_the_terms($project , 'category'); ?>
                   <?php foreach($terms as $term): ?>
