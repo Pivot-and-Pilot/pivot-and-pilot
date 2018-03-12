@@ -73,8 +73,8 @@ get_header(); ?>
      
 
       <section>
-        <div class="featured-projects-background-square rellax" data-rellax-speed="-3"></div>
-        <div class="featured-projects-background-circle rellax" data-rellax-speed="2"></div>
+        <div class="featured-projects-background-square rellax" data-rellax-speed="-1"></div>
+        <div class="featured-projects-background-circle rellax" data-rellax-speed="1"></div>
         <div>
           <div class="featured-projects-header">Featured projects</div>  
           <div id="featured-case-studies">

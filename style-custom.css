@@ -536,10 +536,11 @@ ul {
 }
 
 #accordion-nav{
-  padding: 0 6vw;
+  /* padding: 0 6vw; */
   position: absolute;
     bottom:30px;
-    left:0;
+    width: 100%;
+    padding: 0 6vw;
   -webkit-transform:translate(0, 0);
       -ms-transform:translate(0, 0);
           transform:translate(0, 0);
@@ -552,18 +553,27 @@ ul {
 @media(min-width:768px){
   #accordion-nav{
     bottom: 30px;
-    left: 15px;}}
+    /* left: 30px; */
+    padding-left: 30px;
+  }}
 @media(min-width:1025px){
   #accordion-nav{
     bottom: 15px;
-    left: 45px;}}
+    /* left: 45px; */
+    padding-left: 60px;
+  }}
 @media(min-width:1200px){
   #accordion-nav{
     bottom: 30px;
   }}
 @media(min-width:1320px){
   #accordion-nav{
-    left: calc(calc(100vw - 1230px) / 2);}}
+    max-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    padding: 0;
+    /* left: calc(calc(100vw - 1230px) / 2); */
+  }}
 
 #accordion-nav[data-index="1"]{-webkit-transform:translate(5px, 0px);-ms-transform:translate(5px, 0px);transform:translate(5px, 0px);}
 #accordion-nav[data-index="2"]{-webkit-transform:translate(10px, 0px);-ms-transform:translate(10px, 0px);transform:translate(10px, 0px);}
@@ -660,7 +670,7 @@ ul {
 @media(min-width:1025px){
   #accordion-slider figure{
     cursor: pointer;
-    padding: 120px 60px 120px 60px;
+    padding: 120px 60px 180px 60px;
   }}
 @media(min-width:1025px){
   #accordion-slider figure.state-active{
@@ -668,7 +678,7 @@ ul {
   }}
 @media(min-width:1200px){
   #accordion-slider figure{
-    padding: 100px 60px 100px 60px;
+    padding: 100px 60px 180px 60px;
   }}
 
 @media(min-width:1025px){
@@ -4300,7 +4310,8 @@ footer .site-footer {
 }
 
 .pd-none{
-  padding:0;
+
+  padding: 0;
 }
 
 .phone{

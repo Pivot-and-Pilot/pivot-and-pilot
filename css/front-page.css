@@ -76,13 +76,17 @@
   margin-top: 0;
 }
 .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-detail {
-  margin-bottom: 6vw;
+  margin-bottom: 50px;
 }
 .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-view-projects {
   text-transform: capitalize;
   text-decoration: underline;
-  font-size: 1.2em;
+  font-size: 1.7em;
 }
+.front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-view-projects:hover {
+  text-decoration: none;
+}
+
 
 /* featured projects */
 .featured-projects-header {
@@ -138,7 +142,7 @@
     padding: 60px;
   } */
   .front-page__how-we-do-it .front-page__how-we-do-it-header {
-    font-size: 1.5em;
+    font-size: 0.7em;
   }
   .front-page__how-we-do-it .how-we-do-it-single-wrap {
     max-height: 80px;
@@ -147,7 +151,7 @@
   }
   .front-page__how-we-do-it .how-we-do-it-title {
     font-size: 2.5em;
-    margin: 20px 0;
+    margin: 0 0 40px 0;
     display: flex;
     flex-direction: row;
   }
@@ -189,7 +193,7 @@
     padding-left: 10vw;
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-title {
-    font-size: 1em;
+    font-size: 0.7em;
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-detail {
     font-size: 1.5em;
@@ -197,7 +201,7 @@
 
   /* featured projects */
   .featured-projects-header {
-    font-size: 1.5em;
+    font-size: 0.7em;
   }
   .font-page-view-more-projects {
     position: relative;
@@ -246,8 +250,9 @@
     opacity: 1;
   }
   .featured-projects-background-square {
-    height: 55vw;
-    width: 55vw;
+    height: 50vw;
+    width: 50vw;
+    top: 50px;
   }
   .featured-projects-background-circle {
     height: 50vw;
@@ -270,7 +275,7 @@
   } 
   .front-page__how-we-do-it .how-we-do-it-content-toggle {
     margin: 0 -120px;
-    padding: 60px;
+    padding: 60px 120px;
     background-color: rgb(238, 238, 253);
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle {
@@ -284,7 +289,7 @@
   }
   .front-page__how-we-do-it .how-we-do-it-title {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto 40px;
   }
 
 

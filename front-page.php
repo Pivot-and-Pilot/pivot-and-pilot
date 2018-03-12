@@ -72,8 +72,8 @@ get_header(); ?>
      
 
       <section>
-        <div class="featured-projects-background-square rellax" data-rellax-speed="-3"></div>
-        <div class="featured-projects-background-circle rellax" data-rellax-speed="2"></div>
+        <div class="featured-projects-background-square rellax" data-rellax-speed="-1"></div>
+        <div class="featured-projects-background-circle rellax" data-rellax-speed="1"></div>
         <div>
           <div class="featured-projects-header">Featured projects</div>  
           <div id="featured-case-studies">
@@ -106,7 +106,7 @@ get_header(); ?>
         </div>
       </section>
 
-       <?php while(have_posts()): the_post(); ?>
+      <?php while(have_posts()): the_post(); ?>
       <section class="pd-none">
         <div id="accordion-slider" data-index="0">
           <?php foreach(range(1,4) as $number): ?>
