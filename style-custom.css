@@ -397,7 +397,7 @@ section {
     padding: 75px 60px;}}
 @media(min-width:1200px){
   section{
-    padding: 60px 120px;}}
+    padding: 60px 60px;}}
 
 section > p {
   font-family: arno-pro;
@@ -416,7 +416,8 @@ section:last-of-type{
 }
 @media(min-width: 768px){
   section:last-of-type{
-  padding-bottom: 90px;}}
+  /* padding-bottom: 90px; */
+}}
 
 section.pd-extra{
   padding: 60px 15px;}
@@ -537,7 +538,7 @@ ul {
 #accordion-nav{
   padding: 0 6vw;
   position: absolute;
-    bottom:90px;
+    bottom:30px;
     left:0;
   -webkit-transform:translate(0, 0);
       -ms-transform:translate(0, 0);
@@ -550,6 +551,7 @@ ul {
           transition-delay: 0.5s;}
 @media(min-width:768px){
   #accordion-nav{
+    bottom: 30px;
     left: 15px;}}
 @media(min-width:1025px){
   #accordion-nav{
@@ -557,7 +559,8 @@ ul {
     left: 45px;}}
 @media(min-width:1200px){
   #accordion-nav{
-    bottom: 120px;}}
+    bottom: 30px;
+  }}
 @media(min-width:1320px){
   #accordion-nav{
     left: calc(calc(100vw - 1230px) / 2);}}

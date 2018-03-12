@@ -118,7 +118,7 @@
 				<h3>Don't Like Forms?</h3>
 				<a href="mailto:hello@pivotandpilot.com"><button class="alternate">Send Us An Email</button></a>
 				<h6>Or give us a call:</h6>
-				<a href="tel:+16472836532" class="phone">+1 (647) 283 . 6432</a>
+				<a href="tel:+16472836532" class="phone">+1 (647) 283 . 6532</a>
 			</footer>
 		</div>
  
