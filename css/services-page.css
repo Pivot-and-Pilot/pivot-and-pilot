@@ -8,6 +8,8 @@
 }
 .services-page-intro .services-page-intro-detail {
   margin-top: 20px;
+  font-family: arno-pro;
+  font-size: 1.3em;
 }
 
 /* ====================================================== */
@@ -17,12 +19,18 @@
 @media only screen and (min-width: 1050px) {
 
   .services-page-intro {
-    margin-top: 100px;
-    width: 60vw;
+    margin: 200px 0 80px;
+    width: 100vw;
+  }
+  .services-page-intro .services-page__intro-wrap {
+    margin: 0 auto;
   }
   .services-page-intro .services-page-intro-title p{
     font-size: 3em;
     font-weight: 300;
+  }
+  .services-page__intro-wrap .services-page-intro-title, .services-page-intro-detail {
+    width: 60vw
   }
 
 }
@@ -31,10 +39,13 @@
 /* ======================= X LARGE ====================== */
 /* ====================================================== */
 
-@media only screen and (min-width: 1450px) {
+@media only screen and (min-width: 1200px) {
 
   .services-page-intro {
-    padding-left: 240px;
+    padding-left: 60px;
+  }
+  .services-page-intro .services-page__intro-wrap {
+    max-width: 1200px;
   }
 
 }

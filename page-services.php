@@ -18,11 +18,13 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
       <section class="services-page-intro">
-        <div class="services-page-intro-title">
-        <?php the_field('services_page_intro_title')?>
-        </div>
-        <div class="services-page-intro-detail">
-        <?php the_field('services_page_intro_detail')?>
+        <div class="services-page__intro-wrap">
+          <div class="services-page-intro-title">
+          <?php the_field('services_page_intro_title')?>
+          </div>
+          <div class="services-page-intro-detail">
+          <?php the_field('services_page_intro_detail')?>
+          </div>
         </div>
       </section>
 
