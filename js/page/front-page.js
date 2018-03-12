@@ -266,14 +266,14 @@ jQuery(document).ready(function($){
             }
           }
           if ($(window).width() > 1050) {
-            if ( $($(e.target).parent()).css('height') == '110px' ) {
+            if ( $($(e.target).parent()).css('height') == '80px' ) {
               $($(e.target).parent()).css({
                 'max-height': '2000px',
               });
               $($(e.target).children().children()[1]).toggle();
             } else {
               $($(e.target).parent()).css({
-                'max-height': '110px',
+                'max-height': '80px',
               });
               $($(e.target).children().children()[1]).toggle();
             }

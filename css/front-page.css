@@ -51,7 +51,7 @@
 .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-content-view-projects {
   text-transform: capitalize;
   text-decoration: underline;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 /* featured projects */
@@ -80,6 +80,16 @@
   top: 600px;
   opacity: 0.6;
 }
+@media only screen and (max-width: 500px) {
+  #featured-case-studies article {
+    margin-top: 15px;
+  }
+}
+
+.how-we-do-it-content-detail span {
+  font-family: arno-pro;
+  font-size: 1.1em;
+}
 
 
 /* ====================================================== */
@@ -95,13 +105,13 @@
     font-size: 1.5em;
   }
   .front-page__how-we-do-it .how-we-do-it-single-wrap {
-    max-height: 110px;
+    max-height: 80px;
     margin: 0 -60px;
     padding: 0 60px;
   }
   .front-page__how-we-do-it .how-we-do-it-title {
     font-size: 2.5em;
-    margin: 50px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: row;
   }
@@ -143,7 +153,7 @@
     padding-left: 10vw;
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-title {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .front-page__how-we-do-it .how-we-do-it-content-toggle .how-we-do-it-single-content-toggle > div .how-we-do-it-content-detail {
     font-size: 1.5em;
@@ -228,7 +238,7 @@
   }
   .front-page__how-we-do-it .how-we-do-it-title {
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 20px auto;
   }
 
 
