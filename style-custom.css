@@ -3165,7 +3165,9 @@ ul {
   #archive-portfolio .dropdown li{
     overflow: hidden;
   }
-
+  #archive-portfolio .dropdown li a:focus{
+    outline: none;
+  }
   #archive-portfolio .dropdown li::after{
     background: #433CFF;
     content:"";
