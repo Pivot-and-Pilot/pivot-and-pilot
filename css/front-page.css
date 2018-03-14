@@ -212,6 +212,7 @@
   .post-portfolio > .post-meta {
     color: white;
     display: block;
+    width: calc(100% - 40px);
     left: 15px;
     top: 50%;
     transform: translate(0, -50%);
