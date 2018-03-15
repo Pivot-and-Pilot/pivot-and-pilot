@@ -314,5 +314,9 @@ jQuery(document).ready(function($){
       }
     } )
   })();
+
+  (function showAllIndustries () {
+    $($('.dropdown-industries')[0].children[0]).addClass('state-active');
+  })();
  
 })
