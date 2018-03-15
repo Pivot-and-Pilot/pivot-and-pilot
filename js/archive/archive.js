@@ -179,6 +179,7 @@ $('.filter_clients').on('click', function(e){
 
 });
 
+
 // $('.switch_taxonomy').on('click', function(e){
 //   e.preventDefault();
 //   $('#archive-portfolio').data('currTaxonomy', $(this).data('taxonomy'));
@@ -293,3 +294,31 @@ $(window).scroll(function() {
 
 //   $('#curpage').html(pageIndex);
 // })
+
+jQuery(document).ready(function($){
+
+  (function toggleFilterNav () {
+    $('nav.dropdown-services').click( () => {
+      if ($('nav.dropdown-services').height() > 0) {
+        $('nav.dropdown-services').css('height', '0px');
+      }
+      if ($('nav.dropdown-services').height() == 0) {
+        $('nav.dropdown-services').css('height', '350px');
+      }
+    } )
+
+    $('nav.dropdown-industries').click( () => {
+      if ($('nav.dropdown-industries').height() > 0) {
+        $('nav.dropdown-industries').css('height', '0px');
+      }
+      if ($('nav.dropdown-industries').height() == 0) {
+        $('nav.dropdown-industries').css('height', '350px');
+      }
+    } )
+  })();
+
+  (function showAllIndustries () {
+    $($('.dropdown-industries')[0].children[0]).addClass('state-active');
+  })();
+ 
+})
