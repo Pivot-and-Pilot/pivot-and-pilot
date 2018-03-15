@@ -147,10 +147,12 @@ $('.filter_clients').on('click', function(e){
   $(this).parent().siblings().removeClass('state-active');
   $(this).parent().addClass('state-active');
 
-  if (isServices) {
-    $('.dropdown-industries > li').removeClass('state-active');
-  } else if (isIndustries) {
-    $('.dropdown-services > li').removeClass('state-active');    
+  if($(window).width() > 768){
+    if (isServices) {
+      $('.dropdown-industries > li').removeClass('state-active');
+    } else if (isIndustries) {
+      $('.dropdown-services > li').removeClass('state-active');    
+    }
   }
 
   $('#current-term-description').addClass('state-hidden');
