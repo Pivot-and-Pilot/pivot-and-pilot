@@ -1107,7 +1107,9 @@ ul {
 #colophon {
   background: #443CFF;
   padding: 6vw;
-  position: relative;}
+  position: relative;
+  margin-top: 20px;
+}
 @media(min-width:768px){
   #colophon{
     padding: 30px 30px 15px 30px;}}
@@ -3639,14 +3641,21 @@ ul {
 }
 
 .gallery-columns-2 .gallery-item{
-  max-width: calc(50% - 7.5px);
+  max-width: 100%;
+  margin-bottom: 15px;
 }
 
-.gallery-columns-2 .gallery-item:nth-of-type(even){
-  margin-left: 7.5px;
-}
-.gallery-columns-2 .gallery-item:nth-of-type(odd){
-  margin-right: 7.5px;
+@media(min-width:768px){
+  .gallery-columns-2 .gallery-item{
+    max-width: calc(50% - 7.5px);
+    margin-bottom: 0;    
+  }
+  .gallery-columns-2 .gallery-item:nth-of-type(even){
+    margin-left: 7.5px;
+  }
+  .gallery-columns-2 .gallery-item:nth-of-type(odd){
+    margin-right: 7.5px;
+  }
 }
 
 .gallery-columns-3 .gallery-item{
@@ -4685,7 +4694,7 @@ footer .site-footer {
 
 .print-header-image{
   display:block;
-  margin: 0 -15px 15px -15px;}
+  margin: 0 -7% 15px -7%;}
 @media(min-width:768px){
   .print-header-image{
   margin: 0 -30px 30px -30px;}}

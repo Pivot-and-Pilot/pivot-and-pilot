@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
           $('.how-we-do-it-single-wrap').css('max-height', '65px');
           $('.line-two').css('display', 'block');
           $($(e.currentTarget).parent()).css({
-            'max-height': '2000px',
+            'max-height': '1000px',
           });
           $($(e.currentTarget).children().children()[1]).css('display', 'none');
         } else {
@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
           $('.how-we-do-it-single-wrap').css('max-height', '80px');
           $('.line-two').css('display', 'block');
           $($(e.currentTarget).parent()).css({
-            'max-height': '2000px',
+            'max-height': '1000px',
           });
           $($(e.currentTarget).children().children()[1]).css('display', 'none');
         } else {
